@@ -38,6 +38,14 @@ export function createApp() {
     }),
   );
 
+  
+  app.get('/', (_req, res) => {
+    res.status(200).json({
+      success: true,
+      message: 'AirData NFC Band Management API is running successfully!',
+    });
+  });
+
   app.use('/api', apiRoutes);
   app.use(notFoundHandler);
   app.use(errorHandler);
